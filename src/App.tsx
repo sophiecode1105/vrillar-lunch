@@ -1,7 +1,7 @@
-import React from 'react';
+import Routers from './Routers';
 
 const App = () => {
-  return <div>리액트 만들기</div>;
+  return <Routers />;
 };
 
 export default App;
