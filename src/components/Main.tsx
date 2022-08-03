@@ -3,6 +3,18 @@ import red from '../assets/redbutton.png';
 import green from '../assets/greenbutton.png';
 import { changeGameStatus } from '../state/game';
 import { useAppDispatch } from '../state/hook';
+import background from '../assets/background.jpeg';
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  font-size: 50px;
+  background: url(${background}) no-repeat center / 1000px;
+  height: 100vh;
+`;
 
 const Title = styled.div`
   font-size: 30px;
@@ -38,7 +50,7 @@ const Main = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <>
+    <Container>
       <Title>VRillAR RANDOM LUNCH</Title>
       <Subtitle>PRESS PLAY BUTTON TO SELECT A RESTAURANT</Subtitle>
       <Button
@@ -46,7 +58,7 @@ const Main = () => {
           dispatch(changeGameStatus({ playing: true }));
         }}
       />
-    </>
+    </Container>
   );
 };
 export default Main;
