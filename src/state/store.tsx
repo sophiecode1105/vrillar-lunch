@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import gameyReducer from './game';
+import popupReducer from './popup';
 
 export const store = configureStore({
   reducer: {
     game: gameyReducer,
+    popup: popupReducer,
   },
 });
 

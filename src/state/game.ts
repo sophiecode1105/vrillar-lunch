@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState = {
   playing: false,
+  isSelected: false,
 };
 
 export const gameStatusSlice = createSlice({
@@ -12,8 +13,12 @@ export const gameStatusSlice = createSlice({
       const { playing } = action.payload;
       state.playing = playing;
     },
+    changeResultPage: (state, action: PayloadAction<{ isSelected: boolean }>) => {
+      const { isSelected } = action.payload;
+      state.isSelected = isSelected;
+    },
   },
 });
 
-export const { changeGameStatus } = gameStatusSlice.actions;
+export const { changeGameStatus, changeResultPage } = gameStatusSlice.actions;
 export default gameStatusSlice.reducer;
